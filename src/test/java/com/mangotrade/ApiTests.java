@@ -25,14 +25,7 @@ public class ApiTests {
     @DisplayName("assertj api token/url test")
     void apiTokenTest() {
         ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
-        String er = System.getProperty("er", "api");
-        switch (er) {
-            case "remote":
-                assertThat(apiConfig.apiToken()).isEqualTo("remote_token");
-                assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
-            case "api":
                 assertThat(apiConfig.apiToken()).isEqualTo("new_token");
                 assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
         }
     }
-}

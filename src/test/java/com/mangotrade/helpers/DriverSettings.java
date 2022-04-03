@@ -16,7 +16,7 @@ public class DriverSettings {
         //System.getProperty("url","mango");
        // System.setProperty("url",System.getProperty("url","mango"));
 
-        //System.getProperty("properties", "local");
+        System.getProperty("properties", "local");
         Configuration.browser = Project.projectConfig.browser();
         Configuration.browserVersion = Project.projectConfig.browserVersion();
         Configuration.browserSize = Project.projectConfig.browserSize();
