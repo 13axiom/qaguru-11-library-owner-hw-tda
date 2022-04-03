@@ -27,12 +27,12 @@ public class ApiTests {
         String er = System.getProperty("er");
         ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
         switch (er) {
-        case "local":
-        assertThat(apiConfig.apiToken()).isEqualTo("new_token");
-        assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
-        case "remote":
-        assertThat(apiConfig.apiToken()).isEqualTo("remote_token");
-        assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
+            case "local":
+                assertThat(apiConfig.apiToken()).isEqualTo("new_token");
+                assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
+            case "remote":
+                assertThat(apiConfig.apiToken()).isEqualTo("remote_token");
+                assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
+        }
     }
-
 }
