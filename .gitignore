@@ -38,8 +38,6 @@ target/
 /gradlew
 /gradlew.bat
 .todo
-*.properties
 /src/test/java/cloud/autotests/docs/
-src/test/java/com/mangotrade/tests/exampleforuiplusapi/
-src/test/java/com/mangotrade/config/exampleforuiplusapi/
+
 
