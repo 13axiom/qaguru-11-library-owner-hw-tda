@@ -3,6 +3,7 @@ package com.mangotrade.helpers;
 import com.codeborne.selenide.Configuration;
 import com.mangotrade.config.Project;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ public class DriverSettings {
         //System.getProperty("url","mango");
        // System.setProperty("url",System.getProperty("url","mango"));
 
+        //System.getProperty("properties", "local");
         Configuration.browser = Project.projectConfig.browser();
         Configuration.browserVersion = Project.projectConfig.browserVersion();
         Configuration.browserSize = Project.projectConfig.browserSize();
@@ -22,19 +24,13 @@ public class DriverSettings {
         Configuration.baseUrl = Project.projectConfig.webUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        ChromeOptions chromeOptions = new ChromeOptions();
+            ChromeOptions chromeOptions = new ChromeOptions();
 
-        chromeOptions.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--disable-popup-blocking");
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--lang=en-en");
-
-        if (Project.isWebMobile()) { // for chrome only
-            Map<String, Object> mobileDevice = new HashMap<>();
-            mobileDevice.put("deviceName", Project.projectConfig.browserMobileView());
-            chromeOptions.setExperimentalOption("mobileEmulation", mobileDevice);
-        }
 
         if (Project.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);

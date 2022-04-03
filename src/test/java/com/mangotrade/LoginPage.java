@@ -2,6 +2,7 @@ package com.mangotrade;
 
 
 import com.codeborne.selenide.SelenideElement;
+import com.mangotrade.config.Project;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -22,7 +23,11 @@ public class LoginPage extends TestBase {
     void checkLoginFormHeader() {
         step("Open url 'https://trade.mangotrade.com/en/login'", () ->
                 open("/en/login"));
-        sleep(3000);
+        System.out.println(Project.projectConfig.webUrl());
+        System.out.println(Project.projectConfig.browserSize());
+        System.out.println(Project.projectConfig.browserVersion());
+        System.out.println(Project.projectConfig.browser());
+        sleep(5000);
         step("Check login header form", () -> {
             step("Check form header -> should be 'Log In'", () -> {
                 formHeader.shouldHave(exactText("Log In"));

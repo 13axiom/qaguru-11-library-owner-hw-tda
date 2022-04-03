@@ -22,23 +22,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
 
    @BeforeAll
-
    public static void setUp() {
        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
        DriverSettings.configure();
-
-       DesiredCapabilities capabilities = new DesiredCapabilities();
-       ChromeOptions chromeOptions = new ChromeOptions();
-
-       chromeOptions.addArguments("--no-sandbox");
-       chromeOptions.addArguments("--disable-infobars");
-       chromeOptions.addArguments("--disable-popup-blocking");
-       chromeOptions.addArguments("--disable-notifications");
-       chromeOptions.addArguments("--lang=en-en");
-
-
-       capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-       Configuration.browserCapabilities = capabilities;
 
    }
 

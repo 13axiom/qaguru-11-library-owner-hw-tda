@@ -2,12 +2,8 @@ package com.mangotrade.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/local.properties")
+@Config.Sources("classpath:config/${properties}.properties")
 public interface ProjectConfig extends Config{
-
-    @Key("browserMobileView")
-    @DefaultValue("")
-    String browserMobileView();
 
     @Key("remoteDriverUrl")
     @DefaultValue("")
@@ -18,16 +14,19 @@ public interface ProjectConfig extends Config{
     String videoStorage();
 
     @Key("baseurl")
-    @DefaultValue("https://trade.mangotrade.com")
+    @DefaultValue("https://trade.capitalbear.com/")
     String webUrl();
 
     @Key("browser")
+    @DefaultValue("chrome")
     String browser();
 
     @Key("browser.size")
+    @DefaultValue("3840x2160")
     String browserSize();
 
-    @Key("brovser.version")
+    @Key("browser.version")
+    @DefaultValue("91.0")
     String browserVersion();
 
 }

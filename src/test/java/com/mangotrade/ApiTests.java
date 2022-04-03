@@ -20,7 +20,6 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ApiTests {
-    Path apiProperties = Paths.get("/tmp/auth.properties");
 
     @Test
     @DisplayName("assertj api token/url test")
@@ -33,8 +32,7 @@ public class ApiTests {
 
     @Test
     void testRemoteApiToken() throws Exception {
-        String content = "apitoken=remote_token\napibaseurl=https://api.link.com";
-        Files.write(apiProperties, content.getBytes(StandardCharsets.UTF_8));
+
 
         ApiConfig apiRemoteConfig = ConfigFactory
                 .create(ApiConfig.class, System.getProperties());
