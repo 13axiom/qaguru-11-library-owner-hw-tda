@@ -24,21 +24,15 @@ public class ApiTests {
     @Test
     @DisplayName("assertj api token/url test")
     void apiTokenTest() {
-        //System.setProperty("apitoken","new_token");
         ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
-       assertThat(apiConfig.apiToken()).isEqualTo("new_token");
-       assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
-    }
-
-    @Test
-    void testRemoteApiToken() throws Exception {
-
-
-        ApiConfig apiRemoteConfig = ConfigFactory
-                .create(ApiConfig.class, System.getProperties());
-
-        assertThat(apiRemoteConfig.apiToken()).isEqualTo("remote_token");
-        assertThat(apiRemoteConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
+        String er = System.getProperty("er")
+        switch (er):
+        case "local":
+        assertThat(apiConfig.apiToken()).isEqualTo("new_token");
+        assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
+        case "remote":
+        assertThat(apiConfig.apiToken()).isEqualTo("remote_token");
+        assertThat(apiConfig.apiBaseUrl()).isEqualTo("https://api.link.com");
     }
 
 }
