@@ -2,7 +2,7 @@ package com.mangotrade.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"file:/tmp/remoteApi.properties",
+@Config.Sources({"file:/home/jenkins/workspace/c11-lifetesting-apitoken/tmp/remoteApi.properties",
         "classpath:config/api.properties"})
 public interface ApiConfig extends Config{
 
